@@ -18,28 +18,16 @@ import { myContext } from '../MyContextProvider'
 
 const Navbar = () => {
   const {isLoggedIn, setisLoggedIn}=useContext(myContext)
-  // const [cookies, setCookie, removeCookie] = useCookies(['userId']);
   const router = useRouter()
-
-  // console.log('my cookie is : ',cookies)
 
   const handleLogout = () => {
     localStorage.removeItem('userId')
     setisLoggedIn(false)
     router.push('/')
   }
-
-  // useEffect(()=>{
-  //   const loggedUser=localStorage.getItem('userId')
-  //   console.log(loggedUser)
-  //   if(loggedUser){
-  //     setisLoggedIn(true)
-  //   }
-  // },[])
   
   return (
     <div>
-      <pre>{JSON.stringify(isLoggedIn)}</pre>
       <ul className=" shadow-md flex items-center ">
         <div className="flex flow-row gap-10 p-5 items-center">
           <Image
