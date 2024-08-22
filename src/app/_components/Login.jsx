@@ -5,13 +5,16 @@ import { ArrowBigLeftDash } from "lucide-react";
 import Link from "next/link";
 import { redirect, useRouter } from "next/navigation";
 import { Router } from "next/router";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { myContext } from "../MyContextProvider";
 
 const Login = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+
+  const {isLoggedIn, setisLoggedIn}=useContext(myContext)
 
   const router = useRouter();
 
@@ -22,7 +25,9 @@ const Login = () => {
       .then((res) => {
         if (res.status == 200) {
           toast.success("Logged in successfully...");
-          console.log(res.data)
+          console.log(res.data.userId)
+          const userId=localStorage.setItem('userId',res.data.userId)
+          setisLoggedIn(true)
           router.push(`/`);
         } else {
           toast.error("Wrong credentials, please try again.");
