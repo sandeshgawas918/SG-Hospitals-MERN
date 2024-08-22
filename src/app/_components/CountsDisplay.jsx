@@ -7,7 +7,7 @@ import axios from 'axios'
 const CountsDisplay = () => {
     const [count, setcount] = useState({})
     const getCount=async()=>{
-        axios.get(`http://localhost:7000/api/count`)
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/count`)
         .then((res)=>{
             setcount(res.data)
         })

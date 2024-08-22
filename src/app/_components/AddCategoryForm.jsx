@@ -17,7 +17,7 @@ const AddCategoryForm = () => {
         formData.append('categoryicon', categoryicon)
 
         try {
-            const createdCategory = await axios.post(`http://localhost:7000/api/createCategory`, formData, {
+            const createdCategory = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/createCategory`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 }

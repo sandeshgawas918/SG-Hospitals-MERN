@@ -16,7 +16,7 @@ const page = () => {
 
   const fetchCategoryWithDoctor = async () => {
 
-    await axios.get(`http://localhost:7000/api/categoryDoctor/${category}`,{withCredentials:true})
+    await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/categoryDoctor/${category}`,{withCredentials:true})
       .then((res) => {
         setcategoryDoctor(res.data[0].result);
       })
@@ -40,7 +40,7 @@ const page = () => {
             {
               categoryDoctor.length >0 ? categoryDoctor.map((item, index) => (
                 <div className=' border-2 rounded-2xl flex flex-col p-4' key={index}>
-                  <Image src={`http://localhost:7000${item.doctorIcon}`} width={300} height={300} alt='img' className=' w-full rounded-md' />
+                  <Image src={`${process.env.NEXT_PUBLIC_API_URL}${item.doctorIcon}`} width={300} height={300} alt='img' className=' w-full rounded-md' />
                   <h1 className=' bg-blue-100 rounded-full p-1 px-3 inline-block self-start mt-2 text-purple-600 text-[12px] font-semibold'>{category}</h1>
                   <h1 className='font-bold mt-3'>{item.doctorName}</h1>
                   <h1 className=' text-purple-600 mt-3'>{item.experience} years</h1>

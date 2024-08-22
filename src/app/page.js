@@ -12,7 +12,7 @@ const page = () => {
 
   const fetchCategories = async () => {
     await axios
-      .get(`http://localhost:7000/api/fetchCategories`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/fetchCategories`)
       .then((res) => {
         setcategories(res.data);
       })

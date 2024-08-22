@@ -62,7 +62,7 @@ const BookAppointment = () => {
         if (!date || !selectedTime) {
             toast.error('Something went wrong!')
         }
-        await axios.post(`http://localhost:7000/api/booking`,
+        await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/booking`,
             { date, notes, selectedTime, doctorId: params.id }, { withCredentials: true }
         )
             .then((res) => {

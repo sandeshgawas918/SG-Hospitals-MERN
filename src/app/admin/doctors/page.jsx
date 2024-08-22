@@ -19,7 +19,7 @@ const page = () => {
 
   const getAllDocs = async () => {
     await axios
-      .get(`http://localhost:7000/api/fetchDoctors`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/fetchDoctors`)
       .then((res) => {
         setdoc(res.data);
       })
@@ -28,7 +28,7 @@ const page = () => {
 
   const deleteAppt = async (id) => {
     await axios
-      .delete(`http://localhost:7000/api/deletedoctor`, {
+      .delete(`${process.env.NEXT_PUBLIC_API_URL}/api/deletedoctor`, {
         data: { id },
       })
       .then((res) => {

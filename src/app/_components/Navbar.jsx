@@ -1,11 +1,8 @@
 "use client"
 
-import { Button } from '@/components/ui/button'
-// import { getCookie } from 'cookies-next'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { useCookies } from 'react-cookie'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,23 +12,28 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useRouter } from 'next/navigation'
+import { useCookies } from 'react-cookie'
 
 
 const Navbar = () => {
-  const [cookie, setCookie, removeCokie] = useCookies(['userId'])
-  const [isLoggedIn, setisLoggedIn] = useState('')
+  const [isLoggedIn, setisLoggedIn] = useState(false)
+  const [cookies, setCookie, removeCookie] = useCookies(['userId']);
+  const router = useRouter()
 
-  const router=useRouter()
+  console.log('my cookie is : ',cookies)
 
   const handleLogout = () => {
-    removeCokie('userId', { path: '/' })
+    removeCookie('userId')
+    setisLoggedIn(false)
     router.push('/')
   }
 
   useEffect(()=>{
-    setisLoggedIn(cookie)
-  },[cookie])
-
+    if(cookies.userId){
+      setisLoggedIn(true)
+    }
+  },[cookies])
+  
   return (
     <div>
       <ul className=" shadow-md flex items-center ">
@@ -66,7 +68,7 @@ const Navbar = () => {
               Admin
             </button>
           </Link>
-          {isLoggedIn.userId ? (
+          {isLoggedIn ? (
             <DropdownMenu>
               <DropdownMenuTrigger>
                 <Image src='/user.webp' width={50} height={50} alt='img' />

@@ -22,7 +22,7 @@ const CategorySidebar = () => {
 
     const fetchCategories = async () => {
         await axios
-            .get(`http://localhost:7000/api/fetchCategories`)
+            .get(`${process.env.NEXT_PUBLIC_API_URL}/api/fetchCategories`)
             .then((res) => {
                 setcategories(res.data);
             })
@@ -46,7 +46,7 @@ const CategorySidebar = () => {
                             categories && categories.map((item, index) => (
                                 <Link href={`/category/${item.categoryName}`} key={index} className=' flex flex-row gap-11 p-1 px-3 w-full'>
                                     <CommandItem className='p-3 w-full flex flex-row gap-4 text-purple-600'>
-                                        <Image src={`http://localhost:7000${item.icon}`} width={40} height={40} alt='img' />
+                                        <Image src={`${process.env.NEXT_PUBLIC_API_URL}/${item.icon}`} width={40} height={40} alt='img' />
                                         {item.categoryName}
                                     </CommandItem>
                                 </Link>

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ["localhost","cdn.iconscout.com"],
+        domains: ["localhost","cdn.iconscout.com","sg-hospipats-backend.onrender.com"],
       },
 };
 

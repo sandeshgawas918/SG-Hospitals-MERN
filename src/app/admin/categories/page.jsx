@@ -20,7 +20,7 @@ const page = () => {
 
   const getAllCateg = async () => {
     await axios
-      .get(`http://localhost:7000/api/fetchCategories`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/fetchCategories`)
       .then((res) => {
         setcateg(res.data);
       })
@@ -29,7 +29,7 @@ const page = () => {
 
   const deleteAppt = async (id) => {
     await axios
-      .delete(`http://localhost:7000/api/deletecategory`, {
+      .delete(`${process.env.NEXT_PUBLIC_API_URL}/api/deletecategory`, {
         data: { id },
       })
       .then((res) => {
@@ -73,7 +73,7 @@ const page = () => {
                     <TableCell>{item.categoryName}</TableCell>
                     <TableCell className='flex items-center justify-center'>
                       <Image
-                        src={`http://localhost:7000/${item.icon}`}
+                        src={`${process.env.NEXT_PUBLIC_API_URL}/${item.icon}`}
                         width={50}
                         height={50}
                         alt="img"

@@ -13,7 +13,7 @@ const Register = () => {
     const registerUser = async (e) => {
         e.preventDefault();
         let user = await axios
-            .post(`http://localhost:7000/api/register`, { fname, email, mobile, password, lname })
+            .post(`${process.env.NEXT_PUBLIC_API_URL}/api/register`, { fname, email, mobile, password, lname })
             .then((res) => {
                 toast.success('Registration Successfull...')
                 setemail("");

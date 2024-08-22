@@ -11,7 +11,7 @@ const DoctorSuggestion = () => {
 
   const fetchDocs = async () => {
     await axios
-      .get(`http://localhost:7000/api/fetchDoctors`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/fetchDoctors`)
       .then((res) => {
         setdoctors(res.data);
       })
@@ -35,7 +35,7 @@ const DoctorSuggestion = () => {
             >
               <div className=" grid col-span-1">
                 <Image
-                  src={`http://localhost:7000${item.doctorIcon}`}
+                  src={`${process.env.NEXT_PUBLIC_API_URL}/${item.doctorIcon}`}
                   height={100}
                   width={100}
                   alt="img"

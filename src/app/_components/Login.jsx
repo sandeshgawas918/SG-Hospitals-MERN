@@ -18,10 +18,11 @@ const Login = () => {
   const validateUser = async (e) => {
     e.preventDefault();
     let user = await axios
-      .post(`http://localhost:7000/api/login`, { email, password },{withCredentials:true})
+      .post(`${process.env.NEXT_PUBLIC_API_URL}/api/login`, { email, password },{withCredentials:true})
       .then((res) => {
         if (res.status == 200) {
           toast.success("Logged in successfully...");
+          console.log(res.data)
           router.push(`/`);
         } else {
           toast.error("Wrong credentials, please try again.");

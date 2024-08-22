@@ -17,7 +17,7 @@ const AppointmentList = () => {
     const [bookings, setbookings] = useState(null)
 
     const getAllBookings = async () => {
-        await axios.get(`http://localhost:7000/api/getbookings`)
+        await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/getbookings`)
             .then((res) => {
                 setbookings(res.data)
             })
@@ -25,7 +25,7 @@ const AppointmentList = () => {
     }
 
     const deleteAppt = async (id) => {
-        await axios.delete(`http://localhost:7000/api/deletebooking`, { data: { id } })
+        await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/api/deletebooking`, { data: { id } })
             .then((res) => {
                 console.log(res);
                 getAllBookings()

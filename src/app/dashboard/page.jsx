@@ -17,7 +17,7 @@ const page = () => {
 
     const getAppt = async () => {
         await axios
-            .get(`http://localhost:7000/api/appointments`, { withCredentials: true })
+            .get(`${process.env.NEXT_PUBLIC_API_URL}/api/appointments`, { withCredentials: true })
             .then((res) => {
                 setappointments(res.data);
             })
@@ -48,7 +48,7 @@ const page = () => {
                                     key={item._id}
                                 >
                                     <Image
-                                        src={`http://localhost:7000/${item?.doctor?.doctorIcon}`}
+                                        src={`${process.env.NEXT_PUBLIC_API_URL}/${item?.doctor?.doctorIcon}`}
                                         width={150}
                                         height={60}
                                         alt="img"
@@ -83,7 +83,7 @@ const page = () => {
                                     key={item._id}
                                 >
                                     <Image
-                                        src={`http://localhost:7000/${item.doctor.doctorIcon}`}
+                                        src={`${process.env.NEXT_PUBLIC_API_URL}/${item.doctor.doctorIcon}`}
                                         width={150}
                                         height={60}
                                         alt="img"

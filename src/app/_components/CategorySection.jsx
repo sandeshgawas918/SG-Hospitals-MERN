@@ -29,7 +29,8 @@ const CategorySection = ({ categories }) => {
                 key={index}
               >
                 <Image
-                  src={`http://localhost:7000${item.icon}`}
+                  // src={`http://localhost:7000${item.icon}`}
+                  src={`${process.env.NEXT_PUBLIC_API_URL}/${item.icon}`}
                   width={100}
                   height={90}
                   alt="img"
@@ -40,7 +41,9 @@ const CategorySection = ({ categories }) => {
             ))
           ) : [1, 2, 3, 4].map((item, index) => (
             (
-              <Skeleton className="w-[150px] h-[150px] rounded-md" />
+             <div key={index}>
+               <Skeleton className="w-[150px] h-[150px] rounded-md" />
+             </div>
             )
           ))
           }

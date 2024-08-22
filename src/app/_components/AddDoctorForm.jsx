@@ -15,7 +15,7 @@ const AddDoctorForm = () => {
   
     const fetchCategories = async () => {
       await axios
-        .get(`http://localhost:7000/api/fetchCategories`)
+        .get(`${process.env.NEXT_PUBLIC_API_URL}/api/fetchCategories`)
         .then((res) => {
           setcategories(res.data);
         })
@@ -35,7 +35,7 @@ const AddDoctorForm = () => {
       formData.append('doctorIcon', doctorIcon)
   
       try {
-        const createdDoc = await axios.post(`http://localhost:7000/api/createDoctor`, formData, {
+        const createdDoc = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/createDoctor`, formData, {
           headers: {
             "Content-Type": "multipart/form-data"
           }

@@ -18,7 +18,7 @@ const page = () => {
 
 
   const getDoc = async () => {
-    await axios.get(`http://localhost:7000/api/fetchSingleDoctor/${id}`,{withCredentials:true})
+    await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/fetchSingleDoctor/${id}`,{withCredentials:true})
       .then((res) => {
         setdoctor(res.data)
       })
@@ -63,7 +63,7 @@ const page = () => {
         <div className="">
           {
             doctor.doctorIcon ? <Image
-            src={`http://localhost:7000/${doctor.doctorIcon}`}
+            src={`${process.env.NEXT_PUBLIC_API_URL}/${doctor.doctorIcon}`}
             width={300}
             height={200}
             alt="img"
