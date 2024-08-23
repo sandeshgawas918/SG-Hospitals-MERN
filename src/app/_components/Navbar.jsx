@@ -14,18 +14,26 @@ import {
 import { useRouter } from 'next/navigation'
 import { useCookies } from 'react-cookie'
 import { myContext } from '../MyContextProvider'
+import axios from 'axios'
 
 
 const Navbar = () => {
-  const {isLoggedIn, setisLoggedIn}=useContext(myContext)
+  const { isLoggedIn, setisLoggedIn } = useContext(myContext)
   const router = useRouter()
 
-  const handleLogout = () => {
-    localStorage.removeItem('userId')
-    setisLoggedIn(false)
-    router.push('/')
+  const handleLogout = async () => {
+    await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/logout`)
+      .then((res) => {
+        console.log(res)
+        localStorage.removeItem('userId')
+        setisLoggedIn(false)
+        router.push('/')
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
-  
+
   return (
     <div>
       <ul className=" shadow-md flex items-center ">
