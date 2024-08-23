@@ -4,11 +4,11 @@ import React from 'react'
 const layout = ({ children }) => {
     return (
         <div>
-            <div className=' grid grid-cols-4'>
-                <div className=' grid col-span-3'>
+            <div className=' grid md:grid-cols-4'>
+                <div className=' grid md:col-span-3'>
                     {children}
                 </div>
-                <div className=' grid col-span-1'>
+                <div className=' grid md:col-span-1'>
                     <DoctorSuggestion />
                 </div>
             </div>

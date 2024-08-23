@@ -26,6 +26,7 @@ const DoctorSuggestion = () => {
 
   return (
     <div className=" border p-4 m-5 rounded-lg shadow-md">
+      <h1 className=" text-center">Doctor Suggestion</h1>
       {doctors.length > 0
         ? doctors.map((item, index) => (
             <Link

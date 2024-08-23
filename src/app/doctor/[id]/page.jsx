@@ -59,8 +59,8 @@ const page = () => {
   return (
     <div className="m-5">
       <h1 className=" text-2xl text-black font-semibold">Doctor Details</h1>
-      <div className="flex flex-row p-10 border shadow-sm rounded-sm mt-3">
-        <div className="">
+      <div className="flex flex-col md:flex-row md:p-10 border shadow-sm rounded-sm mt-3">
+        <div className="p-3 md:p-0">
           {
             doctor.doctorIcon ? <Image
             src={`${process.env.NEXT_PUBLIC_API_URL}/${doctor.doctorIcon}`}

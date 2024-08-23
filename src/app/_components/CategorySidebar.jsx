@@ -36,7 +36,7 @@ const CategorySidebar = () => {
     }, []);
 
     return (
-        <div className=' px-3'>
+        <div className=' md:px-3'>
             <Command>
                 <CommandInput placeholder="Type a command or search..." />
                 <CommandList>
@@ -44,8 +44,8 @@ const CategorySidebar = () => {
                     <CommandGroup heading="Suggestions">
                         {
                             categories && categories.map((item, index) => (
-                                <Link href={`/category/${item.categoryName}`} key={index} className=' flex flex-row gap-11 p-1 px-3 w-full'>
-                                    <CommandItem className='p-3 w-full flex flex-row gap-4 text-purple-600'>
+                                <Link href={`/category/${item.categoryName}`} key={index} className=' flex flex-row md:gap-11 p-1 md:px-3 md:w-full'>
+                                    <CommandItem className='md:p-3 w-full flex flex-row gap-4 text-purple-600'>
                                         <Image src={`${process.env.NEXT_PUBLIC_API_URL}/${item.icon}`} width={40} height={40} alt='img' />
                                         {item.categoryName}
                                     </CommandItem>

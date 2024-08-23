@@ -33,10 +33,9 @@ const page = () => {
   return (
     <div>
       <div>
-        {/* <pre>{JSON.stringify(categoryDoctor)}</pre> */}
-        <div className=' mt-20 mx-[20px] px-20'>
-          <h1 className='text-4xl text-black font-semibold text-center'>List of our popular doctor</h1>
-          <div className=' grid lg:grid-cols-4 gap-9 mt-8 mx-20'>
+        <div className=' md:mt-20 md:mx-[20px] md:px-20 mt-3'>
+          <h1 className='md:text-4xl text-2xl text-black font-semibold text-center'>List of our popular doctor</h1>
+          <div className=' grid lg:grid-cols-4 md:gap-9 mt-8 md:mx-20 mx-8 gap-4'>
             {
               categoryDoctor.length >0 ? categoryDoctor.map((item, index) => (
                 <div className=' border-2 rounded-2xl flex flex-col p-4' key={index}>
@@ -52,7 +51,7 @@ const page = () => {
               )) : 
               [1, 2, 3].map((item, index) =>
                 (
-                    <Skeleton className="w-[120px] h-[270px] rounded-md" />
+                    <Skeleton className="md:w-[120px] md:h-[270px] w-full h-[200px] rounded-md" />
                 ))
             }
           </div>

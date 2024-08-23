@@ -26,7 +26,7 @@ const page = () => {
   }, []);
 
   return (
-    <div className=' mb-32'>
+    <div className=''>
       <HeroSection />
       <Suspense fallback={<div>Loading...</div>}>
         <CategorySection categories={categories} />

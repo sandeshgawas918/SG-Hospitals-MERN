@@ -38,31 +38,31 @@ const Navbar = () => {
       <ul className=" shadow-md flex items-center ">
         <div className="flex flow-row gap-10 p-5 items-center">
           <Image
-            src="/logo.svg"
+            src="/hospital-logo.jpg"
             width={200}
             height={100}
             alt="img"
-            className=" mx-20"
+            className=" md:mx-20 rounded-full"
             priority
           />
           <Link
             href={"/"}
-            className=" hover:text-purple-600 hover:scale-110 transition-transform cursor-pointer"
+            className=" hover:text-purple-600 hover:scale-110 transition-transform cursor-pointer hidden lg:block"
           >
             Home
           </Link>
-          <li className=" hover:text-purple-600 hover:scale-110 transition-transform cursor-pointer">
+          <li className=" hover:text-purple-600 hover:scale-110 transition-transform cursor-pointer hidden lg:block">
             Explore{" "}
           </li>
-          <li className=" hover:text-purple-600 hover:scale-110 transition-transform cursor-pointer">
+          <li className=" hover:text-purple-600 hover:scale-110 transition-transform cursor-pointer hidden lg:block">
             Contact Us
           </li>
-          <li className=" hover:text-purple-600 hover:scale-110 transition-transform cursor-pointer">
+          <li className=" hover:text-purple-600 hover:scale-110 transition-transform cursor-pointer hidden lg:block">
             Category
           </li>
         </div>
-        <div className=" ml-auto mx-9 flex items-center justify-center">
-          <Link href={"/admin"}>
+        <div className=" ml-auto mx-9 flex items-center justify-center ">
+          <Link href={"/admin"} className='hidden lg:block'>
             <button className={` ${isLoggedIn.userId ? 'hidden' : 'bg-green-600 hover:bg-green-800 mx-5 px-3 p-1 text-white rounded-md'}`} >
               Admin
             </button>

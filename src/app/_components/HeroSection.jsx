@@ -6,10 +6,10 @@ import React from "react";
 const HeroSection = () => {
   return (
     <div>
-      <div className=" mt-10 flex flex-row items-center justify-center px-[50px]">
-        <div className="grid lg:grid-cols-2 gap-6 p-8">
-          <div className=" flex flex-col justify-center p-10 gap-8">
-            <h1 className=" text-5xl font-bold">
+      <div className=" mt-10 flex flex-row items-center justify-center md:px-[50px]">
+        <div className="grid lg:grid-cols-2 md:gap-6 md:p-8">
+          <div className=" flex flex-col justify-center md:p-10 gap-3 md:gap-8">
+            <h1 className=" md:text-5xl font-bold">
               Get treatment from the{" "}
               <span className=" text-purple-600">Best Doctors</span> here
             </h1>

@@ -11,14 +11,14 @@ const CategorySection = ({ categories }) => {
 
   return (
     <div>
-      <div className=" mt-10 text-center flex flex-col items-center justify-center min-w-full gap-4">
-        <h1 className="text-4xl text-black font-extrabold">
+      <div className=" md:mt-10 text-center flex flex-col items-center justify-center min-w-full gap-4">
+        <h1 className="md:text-4xl text-black font-extrabold">
           Search Doctor by Category
         </h1>
-        <h1 className="text-3xl text-black">
+        <h1 className="md:text-3xl text-black">
           Search Doctor and Book appointment in one click
         </h1>
-        <div className=" grid md:grid-cols-4 gap-9 mt-5">
+        <div className=" grid md:grid-cols-4 grid-cols-2 gap-9 mt-5">
           {categories.length > 0 ? (
             categories.map((item, index) => (
               <Link
