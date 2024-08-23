@@ -10,8 +10,6 @@ import axios from 'axios'
 const page = () => {
   const [categories, setcategories] = useState([]);
 
-  console.log(process.env.NEXT_PUBLIC_API_URL)
-
   const fetchCategories = async () => {
     await axios
       .get(`${process.env.NEXT_PUBLIC_API_URL}/api/fetchCategories`)

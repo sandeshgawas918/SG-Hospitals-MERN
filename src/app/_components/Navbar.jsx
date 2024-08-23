@@ -22,9 +22,8 @@ const Navbar = () => {
   const router = useRouter()
 
   const handleLogout = async () => {
-    await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/logout`)
+    await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/logout`,{withCredentials:true})
       .then((res) => {
-        console.log(res)
         localStorage.removeItem('userId')
         setisLoggedIn(false)
         router.push('/')
@@ -81,7 +80,9 @@ const Navbar = () => {
                     Dashboard
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={handleLogout}>LogOut</DropdownMenuItem>
+                <DropdownMenuItem onClick={handleLogout}>
+                  Logout
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
