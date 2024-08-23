@@ -86,16 +86,16 @@ const BookAppointment = () => {
                     <DialogHeader>
                         <DialogTitle>Book Appointment</DialogTitle>
                         <DialogDescription>
-                            <div className=' grid sm:grid-cols-2 m-4 gap-4 '>
-                                <div className=' border w-full rounded-sm'>
+                            <div className=' grid md:grid-cols-2 md:m-4 gap-4 '>
+                                <div className='flex flow-row items-center justify-center border md:w-full rounded-sm'>
                                     <Calendar mode="single"
                                         selected={date}
                                         onSelect={setDate}
-                                        className="rounded-md p-3"
+                                        className="rounded-md md:p-3"
                                     />
                                 </div>
                                 <div className=' border'>
-                                    <div className=' grid grid-cols-3 gap-5 m-2'>
+                                    <div className=' grid md:grid-cols-3 grid-cols-4 gap-2 md:gap-5 p-2 md:w-full'>
                                         {
                                             timeSlot && timeSlot.map((item, index) => (
                                                 <div onClick={(e) => setselectedTime(item.time)}
@@ -109,13 +109,13 @@ const BookAppointment = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className=''>
+                            <div className='mt-2'>
                                 <textarea name=""
                                     value={notes}
                                     onChange={(e) => { setnotes(e.target.value) }}
                                     placeholder='Enter Yuor Notes here..' id=""
-                                    rows={3} cols={69}
-                                    className=' border rounded-sm p-3'
+                                    rows={3}
+                                    className=' border rounded-sm p-3 w-[350px] md:w-[550px] *:'
                                 >
                                 </textarea>
                             </div>

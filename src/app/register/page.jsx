@@ -14,7 +14,7 @@ const page = () => {
   return (
     <div className=" mt-8">
       <ToastContainer />
-      <Tabs defaultValue="Register" className="w-[400px] m-auto">
+      <Tabs defaultValue="Register" className="md:w-[400px] m-auto">
         <TabsList className="w-full">
           <TabsTrigger value="Register" className="w-full">Register</TabsTrigger>
           <TabsTrigger value="Login" className="w-full">Login</TabsTrigger>

@@ -57,8 +57,8 @@ const page = () => {
 
 
   return (
-    <div className="m-5">
-      <h1 className=" text-2xl text-black font-semibold">Doctor Details</h1>
+    <div className="md:m-5">
+      <h1 className=" md:text-2xl text-black font-semibold mt-2">Doctor Details</h1>
       <div className="flex flex-col md:flex-row md:p-10 border shadow-sm rounded-sm mt-3">
         <div className="p-3 md:p-0">
           {
@@ -74,16 +74,16 @@ const page = () => {
         </div>
         <div className=" m-3 ms-6">
           <div className=" flex flex-col">
-            <h1 className="font-bold mt-3 text-2xl"> {doctor.doctorName}</h1>
-            <h1 className=" flex flex-row gap-3 mt-3 text-xl">
+            <h1 className="font-bold mt-3 md:text-2xl"> {doctor.doctorName}</h1>
+            <h1 className=" flex flex-row gap-3 mt-3 md:text-xl">
               {" "}
-              <GraduationCap /> {doctor.experience} years
+              <GraduationCap /> {doctor.experience} years of experience
             </h1>
-            <h1 className="font-semibold mt-3 flex flex-row gap-3 text-xl">
+            <h1 className="font-semibold mt-3 flex flex-row gap-3 md:text-xl">
               {" "}
               <MapPinCheckInsideIcon /> {doctor.address}
             </h1>
-            <div className=" mt-3 self-start inline-block rounded-full">
+            <div className=" mt-3 self-start inline-block rounded-full text-[12px] md:text-xs">
               <h1 className=" bg-blue-100 p-1 px-4 text-purple-600 rounded-full">
                 {doctor?.speciality?.categoryName}
               </h1>
@@ -107,7 +107,7 @@ const page = () => {
         </div>
       </div>
 
-      <h1 className=" text-2xl text-black font-semibold mt-7">About Doctor</h1>
+      <h1 className=" md:text-2xl text-black font-semibold mt-7">About Doctor</h1>
       <div className=' border shadow-sm p-3 rounded-sm mt-3'>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa
         asperiores ad et, quae commodi totam maiores nemo quam quod corporis

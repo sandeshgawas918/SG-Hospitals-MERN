@@ -22,7 +22,7 @@ const Navbar = () => {
   const router = useRouter()
 
   const handleLogout = async () => {
-    await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/logout`,{withCredentials:true})
+    await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/logout`, { withCredentials: true })
       .then((res) => {
         localStorage.removeItem('userId')
         setisLoggedIn(false)
@@ -37,14 +37,16 @@ const Navbar = () => {
     <div>
       <ul className=" shadow-md flex items-center ">
         <div className="flex flow-row gap-10 p-5 items-center">
-          <Image
-            src="/hospital-logo.jpg"
-            width={200}
-            height={100}
-            alt="img"
-            className=" md:mx-20 rounded-full"
-            priority
-          />
+          <Link href={'/'}>
+            <Image
+              src="/hospital-logo.jpg"
+              width={200}
+              height={100}
+              alt="img"
+              className=" md:mx-20 rounded-full"
+              priority
+            />
+          </Link>
           <Link
             href={"/"}
             className=" hover:text-purple-600 hover:scale-110 transition-transform cursor-pointer hidden lg:block"

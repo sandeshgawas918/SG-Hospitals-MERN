@@ -47,7 +47,7 @@ const DoctorSection = () => {
                             [1, 2, 3, 4].map((item, index) =>
                             (
                                 <div key={index}>
-                                    <Skeleton className="w-[190px] h-[300px] rounded-md" />
+                                    <Skeleton className="md:w-[190px] md:h-[300px] w-full h-[300px] rounded-md" />
                                 </div>
                             ))
 
