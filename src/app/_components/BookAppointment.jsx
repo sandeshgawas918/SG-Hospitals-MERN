@@ -114,7 +114,6 @@ const BookAppointment = () => {
                                     value={notes}
                                     onChange={(e) => { setnotes(e.target.value) }}
                                     placeholder='Enter Yuor Notes here..' id=""
-                                    rows={3}
                                     className=' border rounded-sm p-3 w-[350px] md:w-[550px] *:'
                                 >
                                 </textarea>

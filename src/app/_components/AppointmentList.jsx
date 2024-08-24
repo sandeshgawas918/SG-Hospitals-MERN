@@ -25,7 +25,7 @@ const AppointmentList = () => {
     }
 
     const deleteAppt = async (id) => {
-        await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/api/deletebooking`, { data: { id } })
+        await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/api/deletebooking/${id}`)
             .then((res) => {
                 console.log(res);
                 getAllBookings()

@@ -29,7 +29,7 @@ const DoctorSection = () => {
         <div>
             <div className=' md:mt-20 mt-10 mx-[20px] md:px-20'>
                 <h1 className='md:text-4xl text-black font-semibold text-center text-2xl'>List of our popular doctor</h1>
-                <div className=' grid md:grid-cols-4 md:gap-9 md:mt-8 md:mx-20 gap-4 mt-2'>
+                <div className=' grid md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-2 md:gap-9 md:mt-8 md:mx-20 gap-4 mt-2'>
                     {
                         doctors.length > 0 ? doctors.map((item, index) => (
                             index < 4 &&

@@ -72,7 +72,7 @@ const Navbar = () => {
           {isLoggedIn ? (
             <DropdownMenu>
               <DropdownMenuTrigger>
-                <Image src='/user.webp' width={50} height={50} alt='img' />
+                <Image src='/login.png' width={50} height={50} alt='img' className='rounded-full' />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
