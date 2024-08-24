@@ -15,6 +15,8 @@ import {
     SquareXIcon,
     Trash2,
 } from "lucide-react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const page = () => {
     const [appointments, setappointments] = useState([]);
@@ -34,6 +36,7 @@ const page = () => {
         console.log(id)
         await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/api/deletebooking/${id}`)
         .then((res)=>{
+            toast.warn('Your Appointment has been deleted')
             getAppt()
         })
         .catch((err)=>{
@@ -47,6 +50,7 @@ const page = () => {
 
     return (
         <div className=" md:mt-10 md:px-28">
+            <ToastContainer/>
             <h1 className=" md:text-3xl text-xl mt-2 font-bold">My Bookings</h1>
             <Tabs defaultValue="upcoming" className="w-full mt-5">
                 <TabsList>
