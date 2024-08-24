@@ -23,7 +23,7 @@ const HeroSection = () => {
               healthcare booking today with our intuitive and reliable doctor
               appointment booking app.
             </p>
-            <Link href={"/"}>
+            <Link href={"/register"}>
               <Button className=" bg-purple-600 hover:bg-purple-800 p-6 px-11">
                 Get Started today
               </Button>
