@@ -79,10 +79,12 @@ const page = () => {
                         alt="img"
                       />
                     </TableCell>
-                    <TableCell>
+                    <TableCell >
                       {item.categoryDoctor.length > 0
                         ? item.categoryDoctor.map((doc, ind) => (
-                          <li key={ind}>{doc.doctorName}</li>
+                          <ul className='flex flex-col'>
+                            <li key={ind} className=''>{doc.doctorName}</li>
+                          </ul>
                         ))
                         : "Not Available"}
                     </TableCell>

@@ -25,6 +25,7 @@ const page = () => {
         await axios
             .get(`${process.env.NEXT_PUBLIC_API_URL}/api/appointments`, { withCredentials: true })
             .then((res) => {
+                console.log(res.data)
                 setappointments(res.data);
             })
             .catch((err) => {
@@ -111,7 +112,7 @@ const page = () => {
                                         alt="img"
                                         className="md:rounded-full w-full md:w-auto h-[250px] p-3"
                                     />
-                                    <div className=" flex flex-col gap-3 ml-5">
+                                    <div className=" flex flex-col justify-center gap-3 ml-5">
                                         <h1 className=" text-xl font-semibold">
                                             {" "}
                                             {item.doctor.doctorName}

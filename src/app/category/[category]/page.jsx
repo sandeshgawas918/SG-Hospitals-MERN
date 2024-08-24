@@ -33,9 +33,9 @@ const page = () => {
   return (
     <div>
       <div>
-        <div className=' md:mt-20 md:mx-[20px] md:px-20 mt-3'>
+        <div className=' md:mt-5 md:px-10 mt-3'>
           <h1 className='md:text-4xl text-2xl text-black font-semibold text-center'>List of our popular doctor</h1>
-          <div className=' grid lg:grid-cols-4 md:gap-9 mt-8 md:mx-20 mx-8 gap-4'>
+          <div className=' grid md:grid-cols-4 md:gap-5 mt-8 md:mx-10  gap-4'>
             {
               categoryDoctor.length >0 ? categoryDoctor.map((item, index) => (
                 <div className=' border-2 rounded-2xl flex flex-col p-4' key={index}>
