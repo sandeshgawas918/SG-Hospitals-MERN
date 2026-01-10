@@ -14,12 +14,14 @@ import { useEffect, useState } from "react"
 import moment from "moment/moment"
 
 const AppointmentList = () => {
-    const [bookings, setbookings] = useState(null)
+    const [bookings, setbookings] = useState([])
 
     const getAllBookings = async () => {
         await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/getbookings`)
             .then((res) => {
                 setbookings(res.data)
+                console.log("Testing -", res.data[1].user.fname)
+                console.log("Testing -", res.data)
             })
             .catch((err) => console.log(err))
     }
@@ -54,7 +56,7 @@ const AppointmentList = () => {
                     </TableHeader>
                     <TableBody>
                         {
-                            bookings && bookings.map((item, index) => (
+                            bookings.map((item, index) => (
                                 <TableRow key={item._id}>
                                     <TableCell className="font-medium">{item.user.fname}</TableCell>
                                     <TableCell className="font-medium">{item.user.email}</TableCell>
