@@ -40,7 +40,8 @@ const DoctorSuggestion = () => {
                   height={100}
                   width={100}
                   alt="img"
-                  className=" rounded-full"
+                className=" rounded-full"
+                unoptimized
                 />
               </div>
               <div className=" grid col-span-2 px-4">

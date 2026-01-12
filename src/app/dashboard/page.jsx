@@ -72,7 +72,8 @@ const page = () => {
                                         width={150}
                                         height={60}
                                         alt="img"
-                                        className="md:rounded-full p-3 w-full md:w-auto h-[250px] "
+                                            className="md:rounded-full p-3 w-full md:w-auto h-[250px] "
+                                            unoptimized
                                     />
                                     <div className=" flex flex-col justify-center gap-3 ml-5    ">
                                         <h1 className=" text-xl font-semibold">

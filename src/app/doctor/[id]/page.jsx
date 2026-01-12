@@ -13,12 +13,12 @@ import React, { useEffect, useState } from 'react'
 const page = () => {
   const [doctor, setdoctor] = useState('')
   const params = useParams()
-  const router=useRouter()
+  const router = useRouter()
   const id = params.id
 
 
   const getDoc = async () => {
-    await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/fetchSingleDoctor/${id}`,{withCredentials:true})
+    await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/fetchSingleDoctor/${id}`, { withCredentials: true })
       .then((res) => {
         setdoctor(res.data)
       })
@@ -63,13 +63,14 @@ const page = () => {
         <div className="p-3 md:p-0">
           {
             doctor.doctorIcon ? <Image
-            src={`${process.env.NEXT_PUBLIC_API_URL}/${doctor.doctorIcon}`}
-            width={300}
-            height={200}
-            alt="img"
-            className="rounded-sm"
-          /> :
-          <Skeleton className="w-[300px] h-[300px] rounded-md" />
+              src={`${process.env.NEXT_PUBLIC_API_URL}/${doctor.doctorIcon}`}
+              width={300}
+              height={200}
+              alt="img"
+              className="rounded-sm"
+              unoptimized
+            /> :
+              <Skeleton className="w-[300px] h-[300px] rounded-md" />
           }
         </div>
         <div className=" m-3 ms-6">
