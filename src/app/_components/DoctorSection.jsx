@@ -34,7 +34,7 @@ const DoctorSection = () => {
                         doctors.length > 0 ? doctors.map((item, index) => (
                             index < 4 &&
                             <div className=' border-2 rounded-2xl flex flex-col p-4' key={index}>
-                                <Image src={`${process.env.NEXT_PUBLIC_API_URL}/${item.doctorIcon}`} width={300} height={300} alt='img' className=' w-full rounded-md' />
+                                <Image src={`${process.env.NEXT_PUBLIC_API_URL}${item.doctorIcon}`} width={300} height={300} alt='img' className=' w-full rounded-md' />
                                 <h1 className=' bg-blue-100 rounded-full p-1 px-3 inline-block self-start mt-2 text-purple-600 text-[12px] font-semibold'>{item?.category[0]?.categoryName}</h1>
                                 <h1 className='font-bold mt-3'>{item.doctorName}</h1>
                                 <h1 className=' text-purple-600 mt-3'>{item.experience} years</h1>
