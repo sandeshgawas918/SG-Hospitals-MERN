@@ -53,15 +53,15 @@ const Navbar = () => {
           >
             Home
           </Link>
-          <li className=" hover:text-purple-600 hover:scale-110 transition-transform cursor-pointer hidden lg:block">
+          <Link href={"#explore"} className=" hover:text-purple-600 hover:scale-110 transition-transform cursor-pointer hidden lg:block">
             Explore{" "}
-          </li>
-          <li className=" hover:text-purple-600 hover:scale-110 transition-transform cursor-pointer hidden lg:block">
+          </Link>
+          <Link href={"#contact-us"} className=" hover:text-purple-600 hover:scale-110 transition-transform cursor-pointer hidden lg:block">
             Contact Us
-          </li>
-          <li className=" hover:text-purple-600 hover:scale-110 transition-transform cursor-pointer hidden lg:block">
+          </Link>
+          <Link href={"#category"} className=" hover:text-purple-600 hover:scale-110 transition-transform cursor-pointer hidden lg:block">
             Category
-          </li>
+          </Link>
         </div>
         <div className=" ml-auto mx-9 flex items-center justify-center ">
           <Link href={"/admin"} className='hidden lg:block'>

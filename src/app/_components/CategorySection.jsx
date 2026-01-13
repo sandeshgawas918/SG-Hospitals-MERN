@@ -10,7 +10,7 @@ const CategorySection = ({ categories }) => {
   // const [categories, setcategories] = useState(categories);
 
   return (
-    <div>
+    <div id="category">
       <div className=" md:mt-10 text-center flex flex-col items-center justify-center min-w-full gap-4">
         <h1 className="md:text-4xl text-black font-extrabold">
           Search Doctor by Category
@@ -35,15 +35,16 @@ const CategorySection = ({ categories }) => {
                   height={90}
                   alt="img"
                   className="p-5"
+                  unoptimized
                 />
                 <h1 className=" text-black">{item.categoryName}</h1>
               </Link>
             ))
           ) : [1, 2, 3, 4].map((item, index) => (
             (
-             <div key={index}>
-               <Skeleton className="w-[150px] h-[150px] rounded-md" />
-             </div>
+              <div key={index}>
+                <Skeleton className="w-[150px] h-[150px] rounded-md" />
+              </div>
             )
           ))
           }
